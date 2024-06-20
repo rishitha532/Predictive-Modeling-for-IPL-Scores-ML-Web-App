@@ -1,0 +1,82 @@
+/* General body and font settings */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.container-heading {
+    color: #2A9D8F;
+    font-size: 24px;
+}
+
+.description p {
+    font-weight: 300;
+}
+
+/* Full Background Image */
+.background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%; 
+    display: flex;
+    align-items: center; /* Aligns children (like .prediction-area) vertically center */
+    justify-content: center; /* Aligns children horizontally center */
+}
+
+.prediction-area {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 50%; /* Adjusts the width of the inner form container */
+    max-width: 600px; /* Ensures the container doesn't get too large on wider screens */
+}
+
+.form-input, .myButton {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.myButton {
+    background-color: #2A9D8F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.myButton:hover {
+    background-color: #247A6B;
+}
+
+/* Footer styles */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer .contact-icon {
+    margin: 0 10px;
+    color: #fff;
+}
+
+.footer-description {
+    font-size: 14px;
+    margin-top: 5px;
+}

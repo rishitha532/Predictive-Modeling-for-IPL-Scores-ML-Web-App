@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Innings Wise Score Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='ipl-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class='heading_first'>Score Predictor for </span><span class="heading_second">Indian Premier League (IPL)</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask</p>
+    		</div>
+    	</div>
+
+        <!-- Background Image -->
+        <div class="background-image" style="background-image: url('{{ url_for('static', filename='IPL_Teams.jpg') }}');">
+
+        <!-- Prediction Area -->
+        <div class="prediction-area">
+
+            <!-- Prediction Form -->
+            <div class='div2'>
+                <form action="{{ url_for('predict') }}" method="POST">
+
+                    <input class="form-input" type="text" name="Innings" placeholder="Innings 1 or 2"><br>
+                    <!-- Batting Team Dropdown -->
+                    <select class="form-input align-center" name="batting-team">
+                        <option value="none">--- Select a Batting team ---</option>
+                        <option value="Mumbai Indians">Mumbai Indians</option>
+                        <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                        <option value="Chennai Super Kings">Chennai Super Kings</option>
+                        <option value="Rajasthan Royals">Rajasthan Royals</option>
+                        <option value="Punjab Kings">Punjab Kings</option>
+                        <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                        <option value="Delhi Capitals">Delhi Capitals</option>
+                        <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                        <option value="Gujarat Titans">Gujarat Titans</option>
+                        <option value="Lucknow Super Giants">Lucknow Super Giants</option>
+                    </select><br>
+                    <!-- Bowling Team Dropdown -->
+                    <select class="form-input align-center" name="bowling-team">
+                        <option value="none">--- Select a Bowling team ---</option>
+                        <option value="Mumbai Indians">Mumbai Indians</option>
+                        <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                        <option value="Chennai Super Kings">Chennai Super Kings</option>
+                        <option value="Rajasthan Royals">Rajasthan Royals</option>
+                        <option value="Punjab Kings">Punjab Kings</option>
+                        <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                        <option value="Delhi Capitals">Delhi Capitals</option>
+                        <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                        <option value="Gujarat Titans">Gujarat Titans</option>
+                        <option value="Lucknow Super Giants">Lucknow Super Giants</option>
+                    </select><br>
+                    <!-- City Dropdown -->
+                    <select class="form-input align-center" name="city">
+                        <option value="none">--- Select a City ---</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Cuttack">Cuttack</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Dharamsala">Dharamsala</option>
+                        <option value="Guwahati">Guwahati</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Lucknow">Lucknow</option>
+                        <option value="Mohali">Mohali</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Navi Mumbai">Navi Mumbai</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Raipur">Raipur</option>
+                        <option value="Ranchi">Ranchi</option>
+                        <option value="Visakhapatnam">Visakhapatnam</option>
+                    </select><br>
+
+                    <!-- Toss Dropdown -->
+                    <select class="form-input align-center" name="toss_decision">
+                        <option value="none">--- Toss Decision ---</option>
+                        <option value="Bat">Bat</option>
+                        <option value="Field">Field</option>
+                    </select><br>
+
+                    <input class="form-input" type="text" name="Overs" placeholder="Overs (>= 5.0) eg. 7.2"><br>
+                    <input class="form-input" type="text" name="Score_in_last_30_balls" placeholder="Runs scored in previous 5 Overs eg. 42"><br>
+                    <input class="form-input" type="text" name="Wickets_in_last_30_balls" placeholder="Wickets taken in previous 5 Overs eg. 3"><br>
+                    <input class="form-input" type="text" name="Current_Total_Score" placeholder="Total Runs scored in the overs eg. 80"><br>
+                    <input class="form-input" type="text" name="Wickets_Fallen" placeholder="Wickets fallen in Total eg. 5"><br>
+
+			<input type="submit" class="myButton" value="Predict Score">
+        	</form>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+            <a target="_blank" href="https://github.com/rishitha532?tab=repositories"><i class="fab fa-github fa-lg contact-icon"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/rishitha-reddy-nimma-9a789a186/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+        </div>
+           <p class='footer-description'>Made by Rishitha Nimma</p>
+       </div>
+
+    </body>
+</html>
